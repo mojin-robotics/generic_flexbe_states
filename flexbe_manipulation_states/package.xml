@@ -1,6 +1,6 @@
 <package>
   <name>flexbe_manipulation_states</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>
      flexbe_manipulation_states provides a collection of robot-agnostic
      states related to manipulation and trajectory execution.

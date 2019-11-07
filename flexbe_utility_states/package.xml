@@ -1,6 +1,6 @@
 <package>
   <name>flexbe_utility_states</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>
      Provides a collection of generic states mainly for development and debugging purposes.
   </description>

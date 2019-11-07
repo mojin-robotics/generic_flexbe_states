@@ -2,8 +2,8 @@
 Changelog for package flexbe_utility_states
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.1 (2019-11-07)
+------------------
 * Merge pull request `#9 <https://github.com/mojin-robotics/generic_flexbe_states/issues/9>`_ from alireza-hosseini/install-src
   fix: Install src directories of state packages
 * fix: Install src directories of state packages (`#1 <https://github.com/mojin-robotics/generic_flexbe_states/issues/1>`_)
