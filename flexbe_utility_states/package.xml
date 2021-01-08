@@ -1,4 +1,8 @@
-<package>
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>flexbe_utility_states</name>
   <version>1.0.1</version>
   <description>
@@ -9,14 +13,16 @@
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>flexbe_core</run_depend>
-  <run_depend>flexbe_testing</run_depend>
-  <run_depend>roslaunch</run_depend>
+  <exec_depend>flexbe_core</exec_depend>
+  <exec_depend>flexbe_testing</exec_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>rospy</exec_depend>
 
   <export>
-    <flexbe_states />
+    <flexbe_states/>
   </export>
 
 </package>
