@@ -3,7 +3,7 @@ dist: xenial
 language: generic
 
 before_install:
-  - git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
+  - git clone https://github.com/mojin-robotics/flexbe_ci.git ~/flexbe_ci
   - source ~/flexbe_ci/setup.bash
   - ~/flexbe_ci/ci_scripts/before_install.bash
   
