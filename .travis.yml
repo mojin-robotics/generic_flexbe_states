@@ -1,10 +1,18 @@
 sudo: required
-dist: xenial
 language: generic
 
+jobs:
+  include:
+  - dist: xenial
+    env: ROS_DISTRO=kinetic
+  - dist: bionic
+    env: ROS_DISTRO=melodic
+  - dist: focal
+    env: ROS_DISTRO=noetic PYTHON=python3
+
 before_install:
-  - git clone https://github.com/fmessmer/flexbe_ci.git -b fix_flexbe_ci_mojin ~/flexbe_ci
-  - source ~/flexbe_ci/setup.bash
+  - git clone https://github.com/mojin-robotics/flexbe_ci.git ~/flexbe_ci
+  - source ~/flexbe_ci/setup.bash $ROS_DISTRO
   - ~/flexbe_ci/ci_scripts/before_install.bash
   
 install:
