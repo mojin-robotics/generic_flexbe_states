@@ -14,9 +14,7 @@ catkin_python_setup()
 # CATKIN_DEPENDS - Other catkin projects that this project depends on
 # DEPENDS - Non-catkin CMake projects that this project depends on
 # CFG_EXTRAS - Additional configuration options
-catkin_package(
-    INCLUDE_DIRS src
-    LIBRARIES ${PROJECT_NAME})
+catkin_package()
 
 # use add_library() or add_executable() as required
 #add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS})
