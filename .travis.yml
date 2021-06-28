@@ -1,17 +1,24 @@
-sudo: required
-dist: xenial
 language: generic
+services:
+  - docker
 
-before_install:
-  - git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
-  - source ~/flexbe_ci/setup.bash
-  - ~/flexbe_ci/ci_scripts/before_install.bash
-  
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+env:
+  global:
+    - ADDITIONAL_DEBS='apt-utils dialog'
+    - CATKIN_LINT=pedantic
+    - CMAKE_ARGS=-DCMAKE_BUILD_TYPE=Release
+    - PARALLEL_TESTS=1
+    - PYLINT_ARGS='--output-format=parseable --errors-only --disable=method-hidden'
+    - PYLINT_CHECK=true
+    - ROS_REPO=main
+  matrix:
+    - ROS_DISTRO=kinetic # UPSTREAM_WORKSPACE=.ci.rosinstall.kinetic BEFORE_SETUP_UPSTREAM_WORKSPACE='sudo -H pip install -q --no-deps -r .pip.install'
+    - ROS_DISTRO=noetic # UPSTREAM_WORKSPACE=.ci.rosinstall.noetic
 install:
-  - ~/flexbe_ci/ci_scripts/install.bash
-  
-before_script:
-  - ~/flexbe_ci/ci_scripts/before_script.bash
-  
+  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
-  - ~/flexbe_ci/ci_scripts/script.bash
+  - .industrial_ci/travis.sh
