@@ -1,0 +1,10 @@
+<launch>
+    <arg name="pkg" value="flexbe_manipulation_states" />
+    <arg name="path" value="$(find flexbe_manipulation_states)/tests" />
+    <include file="$(find flexbe_testing)/test/flexbe_rostest.test">
+        <arg name="package" value="$(arg pkg)" />
+        <arg name="testcases" value="
+            $(arg path)/moveit_to_joints_dyn_state/moveit_to_joints_dyn_state_import.yaml
+        " />
+    </include>
+</launch>

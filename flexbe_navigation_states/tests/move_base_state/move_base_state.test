@@ -1,0 +1,10 @@
+<launch>
+    <arg name="pkg" value="flexbe_navigation_states" />
+    <arg name="path" value="$(find flexbe_navigation_states)/tests" />
+    <include file="$(find flexbe_testing)/test/flexbe_rostest.test">
+        <arg name="package" value="$(arg pkg)" />
+        <arg name="testcases" value="
+            $(arg path)/move_base_state/move_base_state_import.yaml
+        " />
+    </include>
+</launch>

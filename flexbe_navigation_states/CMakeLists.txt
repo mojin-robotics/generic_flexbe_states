@@ -3,26 +3,17 @@ project(flexbe_navigation_states)
 
 find_package(catkin REQUIRED)
 
-## Uncomment this if the package has a setup.py. This macro ensures
-## modules and global scripts declared therein get installed
-## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
 catkin_python_setup()
 
-# specify catkin-specific information
-# INCLUDE_DIRS - The exported include paths (i.e. cflags) for the package
-# LIBRARIES - The exported libraries from the project
-# CATKIN_DEPENDS - Other catkin projects that this project depends on
-# DEPENDS - Non-catkin CMake projects that this project depends on
-# CFG_EXTRAS - Additional configuration options
 catkin_package()
 
-# use add_library() or add_executable() as required
-#add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS})
+install(DIRECTORY tests
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  PATTERN "*.py" EXCLUDE # do not install scripts twice
+)
 
-# This installation of the src directory is redundant (modules are installed by
-# setup.py) but is necessary for the FlexBE App to find the states.
-install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
-# install executables
-#install(PROGRAMS bin/hello
-#        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+# run tests
+if(CATKIN_ENABLE_TESTING)
+    find_package(rostest REQUIRED)
+    add_rostest(tests/move_base_state/move_base_state.test)
+endif()
