@@ -1,0 +1,3 @@
+class: GetJointValuesDynState
+import_only: true
+path: flexbe_manipulation_states.get_joint_values_dyn_state

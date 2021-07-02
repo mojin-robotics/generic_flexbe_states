@@ -1,0 +1,3 @@
+class: SrdfStateToMoveitExecute
+import_only: true
+path: flexbe_manipulation_states.srdf_state_to_moveit_execute_trajectory

@@ -1,0 +1,3 @@
+class: MoveitToJointsDynState
+import_only: true
+path: flexbe_manipulation_states.moveit_to_joints_dyn_state

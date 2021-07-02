@@ -25,6 +25,8 @@
   <exec_depend>tf</exec_depend>
   <exec_depend>trajectory_msgs</exec_depend>
 
+  <test_depend>rostest</test_depend>
+
   <export>
     <flexbe_states/>
   </export>

@@ -1,0 +1,3 @@
+class: GetJointsFromSrdfState
+import_only: true
+path: flexbe_manipulation_states.get_joints_from_srdf_state
