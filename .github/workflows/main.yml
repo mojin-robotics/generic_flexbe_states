@@ -26,7 +26,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - { ROS_DISTRO: kinetic }
           - { ROS_DISTRO: noetic }
 
     steps:
