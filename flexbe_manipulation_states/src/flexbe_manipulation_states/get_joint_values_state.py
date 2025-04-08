@@ -46,7 +46,10 @@ class GetJointValuesState(EventState):
 				and self._joint_values[self._joints.index(msg.name[i])] is None:
 					self._joint_values[self._joints.index(msg.name[i])] = msg.position[i]
 
-		if all(v is not None for v in self._joint_values):
+		# this was changed from all -> any, to allow also checking for partial values
+		# as all joints are published in the same message that should be fine
+		# (this seems to be only used for afi at the moment, so this change should not break anything)
+		if any(v is not None for v in self._joint_values):
 			userdata.joint_values = self._joint_values
 			return 'retrieved'
 
